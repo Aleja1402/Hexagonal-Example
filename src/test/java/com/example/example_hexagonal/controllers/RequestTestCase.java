@@ -30,7 +30,10 @@ public class RequestTestCase {
     }
 
     public void assertRequestWithBody (String method, String endPoint, String body, Integer expectedStatus) throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.request(HttpMethod.valueOf(method), endPoint).content(body).contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(MockMvcRequestBuilders
+                        .request(HttpMethod.valueOf(method), endPoint)
+                        .content(body)
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(expectedStatus))
                 .andExpect(content().string(""));
     }

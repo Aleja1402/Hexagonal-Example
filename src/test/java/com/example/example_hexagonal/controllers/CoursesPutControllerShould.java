@@ -13,4 +13,5 @@ public class CoursesPutControllerShould extends RequestTestCase {
                 "{\"name\":\"The best course\", \"duration\":\"2 month\"}",
                 201);
     }
+
 }
